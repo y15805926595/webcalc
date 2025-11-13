@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "简易计算器",
+  "version": "1.0",
+  "description": "一个简单的侧边栏计算器，支持复制粘贴数据进行计算",
+  "author": "Calculator App",
+  "action": {
+    "default_icon": "icon.svg",
+    "default_title": "打开计算器"
+  },
+  "icons": {
+    "16": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "permissions": ["sidePanel", "clipboardRead", "clipboardWrite"]
+}

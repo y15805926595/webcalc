@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页选数计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            margin: 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .history-display {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            font-size: 16px;
+            text-align: right;
+            color: #666;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .display {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 24px;
+            text-align: right;
+            border: 1px solid #ddd;
+            border-radius: 0 0 4px 4px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+        }
+        button:hover {
+            background-color: #d0d0d0;
+        }
+        .number {
+            background-color: #f5f5f5;
+        }
+        .operator {
+            background-color: #ffa500;
+            color: white;
+        }
+        .operator:hover {
+            background-color: #ff8c00;
+        }
+        .function {
+            background-color: #808080;
+            color: white;
+        }
+        .function:hover {
+            background-color: #666666;
+        }
+        .equals {
+            background-color: #008000;
+            color: white;
+        }
+        .equals:hover {
+            background-color: #006400;
+        }
+        .clear {
+            background-color: #ff0000;
+            color: white;
+        }
+        .clear:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="history-display" class="history-display"></div>
+        <input type="text" id="display" class="display" >
+        <div class="buttons">
+            <button class="function" id="clear">C</button>
+            <button class="function" id="delete">⌫</button>
+            <button class="operator" id="divide">÷</button>
+            <button class="operator" id="multiply">×</button>
+            
+            <button class="number" data-value="7">7</button>
+            <button class="number" data-value="8">8</button>
+            <button class="number" data-value="9">9</button>
+            <button class="operator" id="subtract">−</button>
+            
+            <button class="number" data-value="4">4</button>
+            <button class="number" data-value="5">5</button>
+            <button class="number" data-value="6">6</button>
+            <button class="operator" id="add">+</button>
+            
+            <button class="number" data-value="1">1</button>
+            <button class="number" data-value="2">2</button>
+            <button class="number" data-value="3">3</button>
+            <button class="equals" id="equals">=</button>
+            
+            <button class="number" data-value="0">0</button>
+            <button class="number" data-value=".">.</button>
+            <button class="function" id="plusMinus">±</button>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+</html>
